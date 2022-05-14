@@ -1,4 +1,4 @@
-# Manrit Kaur
+#Manrit Kaur
 # 5/2022
 # draw shapes using turtle
 
@@ -22,6 +22,7 @@ def shape(x, y, shape_color, side_len, fill, side_angle, side_num, pen_size, tur
     carl = turtle.Turtle()
     carl.pensize(pen_size)
     carl.speed(turtle_speed)
+    carl.shape("turtle")
     if turtle_vis == 'n':
         carl.ht()
     carl.penup()
@@ -31,6 +32,7 @@ def shape(x, y, shape_color, side_len, fill, side_angle, side_num, pen_size, tur
     if fill == 'y':
         carl.begin_fill()
         if side_num == 0:
+            carl.goto(x - side_len, y - side_len)
             carl.circle(side_len)
         elif side_num == 1:
             carl.left(int(turtle.numinput(f'settings for user generated shape {count2} of {num_shapes}',
@@ -222,4 +224,3 @@ def user_generated_shape():
     finished = str(input('Press y followed by enter when you are ready to end the program\n'))
     if finished == 'y':
         quit()
-
